@@ -1,7 +1,16 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+
 function App() {
   return (
     <>
-      <p className="text-5xl font-bold btn font-poppins">hi</p>
+      <div className="h-28 z-20 w-full">
+        <Navbar></Navbar>
+      </div>
+
+      <Home></Home>
+      <Outlet />
     </>
   );
 }
