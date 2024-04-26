@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleThemeChange = (e) => {
     if (e.target.checked) {
-      document.querySelector("html").setAttribute("data-theme", "synthwave");
+      document.querySelector("html").setAttribute("data-theme", "dark");
       setTheme("synthwave");
     } else {
       document.querySelector("html").setAttribute("data-theme", "light");
@@ -24,7 +24,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-teal-600 border-b-2 rounded-none border-teal-600 font-bold"
-              : "font-normal hover:text-teal-600"
+              : "font-normal hover:text-teal-600 "
           }
           to={"/"}
         >
@@ -36,7 +36,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-teal-600 border-b-2 rounded-none border-teal-600 font-bold"
-              : "font-normal hover:text-teal-600"
+              : "font-normal hover:text-teal-600 "
           }
           to={"/allArt&Craft"}
         >
@@ -102,7 +102,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 dark:text-white"
               >
                 {navLinks}
               </ul>
