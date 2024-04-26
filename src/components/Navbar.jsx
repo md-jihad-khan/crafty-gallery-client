@@ -1,11 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import Lottie from "lottie-react";
 import leafe from "../assets/Animation - 1714111134742.json";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("");
-  const user = "hi";
+  const { user, logOut } = useContext(AuthContext);
 
   const handleThemeChange = (e) => {
     if (e.target.checked) {
@@ -23,7 +24,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-teal-600 border-b-2 rounded-none border-teal-600 font-bold"
-              : "font-normal hover:text-sky-600"
+              : "font-normal hover:text-teal-600"
           }
           to={"/"}
         >
@@ -35,7 +36,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive
               ? "text-teal-600 border-b-2 rounded-none border-teal-600 font-bold"
-              : "font-normal hover:text-sky-600"
+              : "font-normal hover:text-teal-600"
           }
           to={"/allArt&Craft"}
         >
@@ -139,14 +140,17 @@ const Navbar = () => {
                     </div>
                   </div>
 
-                  <button className="btn btn-outline border-teal-600">
+                  <button
+                    className="btn btn-outline border-teal-600"
+                    onClick={logOut}
+                  >
                     LogOut
                   </button>
                 </div>
               </>
             ) : (
               <>
-                <Link to={"/login"} className="btn btn-outline btn-info">
+                <Link to={"/login"} className="btn btn-outline border-teal-600">
                   Login
                 </Link>
               </>
