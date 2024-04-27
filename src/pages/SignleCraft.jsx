@@ -1,57 +1,47 @@
-import { Link } from "react-router-dom";
 import { RiStarSFill } from "react-icons/ri";
+import { useLoaderData } from "react-router-dom";
 
-const CraftCard = ({ craft }) => {
-  const {
-    _id,
-    name,
-    subcategory,
-    price,
-    rating,
-    customization,
-    processing_time,
-    stockStatus,
-    photo_url,
-    description,
-  } = craft;
-
+const SignleCraft = () => {
+  const craft = useLoaderData();
+  console.log(craft);
   return (
-    <div className="rounded-lg shadow-xl  cursor-pointer transition-transform duration-300 transform hover:scale-105 border">
-      <figure className="px-10 pt-2 ">
-        <img
-          className="rounded-lg h-48 w-full object-cover"
-          src={photo_url}
-          alt={name}
-        />
-      </figure>
-      <div className=" px-10 p-2">
-        <h2 className="card-title text-2xl">{name}</h2>
-        <p className="line-clamp-2 text-sm text-gray-500">{description}</p>
+    <>
+      <div className="hero-content flex-col gap-10 lg:flex-row  ">
+        <div className=" bg-[#1313130D] rounded-lg lg:w-full ">
+          <img
+            src={craft.photo_url}
+            className="md:p-20 lg:h-[80vh] object-cover w-full  "
+          />
+        </div>
         <div>
-          <p>
-            <strong>Subcategory:</strong>
-            <span className="text-sm ml-2 text-gray-500">{subcategory}</span>
+          <h1 className="text-5xl font-bold">{craft.name}</h1>
+
+          <p className=" font-medium text-xl mb-2"> {craft.description}</p>
+          <hr className=" gradient-border border" />
+          <p className="my-3 text-lg font-semibold">
+            Subcategory: {craft.subcategory}
           </p>
+          <hr className="gradient-border border" />
           <p className="flex items-center">
             <strong>Rating:</strong>{" "}
             <span className="text-sm flex items-center ml-2 text-gray-500">
-              {rating == 1 && (
+              {craft.rating == 1 && (
                 <RiStarSFill className="text-yellow-500 text-lg" />
               )}
-              {rating == 2 && (
+              {craft.rating == 2 && (
                 <>
                   <RiStarSFill className="text-yellow-500 text-lg" />
                   <RiStarSFill className="text-yellow-500 text-lg" />
                 </>
               )}
-              {rating == 3 && (
+              {craft.rating == 3 && (
                 <>
                   <RiStarSFill className="text-yellow-500 text-lg" />
                   <RiStarSFill className="text-yellow-500 text-lg" />
                   <RiStarSFill className="text-yellow-500 text-lg" />
                 </>
               )}
-              {rating == 4 && (
+              {craft.rating == 4 && (
                 <>
                   <RiStarSFill className="text-yellow-500 text-lg" />
                   <RiStarSFill className="text-yellow-500 text-lg" />
@@ -59,7 +49,7 @@ const CraftCard = ({ craft }) => {
                   <RiStarSFill className="text-yellow-500 text-lg" />
                 </>
               )}
-              {rating == 5 && (
+              {craft.rating == 5 && (
                 <>
                   <RiStarSFill className="text-yellow-500 text-lg" />
                   <RiStarSFill className="text-yellow-500 text-lg" />
@@ -72,35 +62,38 @@ const CraftCard = ({ craft }) => {
           </p>
           <p>
             <strong>Price:</strong>{" "}
-            <span className="text-sm ml-2 text-gray-500">{price}</span>
+            <span className="text-sm ml-2 text-gray-500">{craft.price}</span>
           </p>
           <p>
             <strong>Customization:</strong>{" "}
-            <span className="text-sm ml-2 text-gray-500">{customization}</span>
+            <span className="text-sm ml-2 text-gray-500">
+              {craft.customization}
+            </span>
           </p>
           <p>
             <strong>Stock Status:</strong>
-            <span className="text-sm ml-2 text-gray-500"> {stockStatus}</span>
+            <span className="text-sm ml-2 text-gray-500">
+              {" "}
+              {craft.stockStatus}
+            </span>
           </p>
           <p>
             <strong>Processing Time:</strong>{" "}
             <span className="text-sm ml-2 text-gray-500">
               {" "}
-              {processing_time}
+              {craft.processing_time}
             </span>
           </p>
-        </div>
-        <div className="card-actions justify-center mt-2">
-          <Link
-            to={`/craft/${_id}`}
-            className="btn cursor-pointer gradient-bg text-white"
-          >
-            View Details
-          </Link>
+          <div className="flex gap-5 mt-4 mb-2 items-center">
+            <p className="font-bold">Facilities</p>
+
+            <span></span>
+          </div>
+          <hr className="gradient-border border" />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default CraftCard;
+export default SignleCraft;
