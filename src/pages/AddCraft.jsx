@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
+
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
 
@@ -83,18 +84,20 @@ const AddCraft = () => {
     <div>
       <div className="md:w-4/5 mx-auto p-5">
         <div className="bg-base-200  p-5 rounded-lg text-center ">
-          <h3 className="text-5xl mb-2 mt-3 gradient-text font-poppins font-bold">
-            Add{" "}
-            <Typewriter
-              words={["Craft Item "]}
-              loop={Infinity}
-              cursor
-              cursorStyle="!"
-              typeSpeed={100}
-              deleteSpeed={70}
-              delaySpeed={2000}
-            />
-          </h3>
+          <div className="flex items-center justify-center gap-3 text-5xl mb-2 mt-3 font-poppins font-bold">
+            <h3 className="gradient-text ">Add Craft</h3>
+            <span className="text-teal-500 text-5xl">
+              <Typewriter
+                cursor
+                words={[" Item "]}
+                cursorStyle="_"
+                typeSpeed={100}
+                loop
+                deleteSpeed={70}
+                delaySpeed={2000}
+              />
+            </span>
+          </div>
           <div className="inline-flex items-center justify-center w-full">
             <hr className="w-64  my-4 border gradient-border rounded "></hr>
             <div className="absolute px-4 -translate-x-1/2 bg-base-200 left-1/2 ">

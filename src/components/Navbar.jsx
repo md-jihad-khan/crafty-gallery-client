@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import leafe from "../assets/Animation - 1714111134742.json";
 import { useContext, useState } from "react";
@@ -7,6 +7,8 @@ import { AuthContext } from "../providers/AuthProvider";
 const Navbar = () => {
   const [theme, setTheme] = useState("");
   const { user, logOut } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleThemeChange = (e) => {
     if (e.target.checked) {
@@ -17,6 +19,12 @@ const Navbar = () => {
       setTheme("light");
     }
   };
+
+  const handleLogout = () => {
+    navigate("/");
+    logOut();
+  };
+
   const navLinks = (
     <>
       <li>
@@ -75,11 +83,11 @@ const Navbar = () => {
   );
 
   return (
-    <div className="backdrop-blur-sm  fixed w-full">
+    <div className="bg-base-100  fixed w-full">
       <div className="mx-auto lg:container ">
         <div className="navbar font-poppins">
           <div className="navbar-start ">
-            <div className="dropdown">
+            <div className="dropdown ">
               <div
                 tabIndex={0}
                 role="button"
@@ -102,7 +110,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 dark:text-white"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-base-100"
               >
                 {navLinks}
               </ul>
@@ -143,8 +151,8 @@ const Navbar = () => {
                   </div>
 
                   <button
-                    className="btn gradient-bg text-white"
-                    onClick={logOut}
+                    className="btn gradient-bg border-none text-white"
+                    onClick={handleLogout}
                   >
                     LogOut
                   </button>
@@ -152,7 +160,10 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to={"/login"} className="btn gradient-bg text-white">
+                <Link
+                  to={"/login"}
+                  className="btn border-none gradient-bg text-white"
+                >
                   Login
                 </Link>
               </>
