@@ -4,9 +4,9 @@ import CraftCard from "../components/CraftCard";
 const AllArtandCraft = () => {
   const crafts = useLoaderData();
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mb-16">
       <div className="mb-7">
-        <div className="flex items-center justify-center gap-3 text-3xl md:text-5xl font-rancho mb-2 mt-3  font-bold">
+        <div className="flex items-center justify-center gap-3 text-2xl md:text-5xl font-rancho mb-2 mt-3  font-bold">
           <h3 className="gradient-text ">
             Discover a World of Handcrafted Art{" "}
           </h3>
@@ -22,7 +22,7 @@ const AllArtandCraft = () => {
             />
           </span>
         </div>
-        <p className="text-sm font-extralight md:w-2/3 mx-auto text-gray-400 text-center">
+        <p className="text-xs font-extralight md:w-2/3 mx-auto text-gray-400 text-center">
           Embark on a journey through our curated collection of artisanal
           creations, where every piece tells a story of craftsmanship and
           creativity. From intricately designed ceramics to meticulously crafted
