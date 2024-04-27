@@ -15,6 +15,4 @@
 }
 .gradient-border {
   border-image: linear-gradient(#06b6d4, #14b8a6) 30;
-
-  border-style: solid;
 }

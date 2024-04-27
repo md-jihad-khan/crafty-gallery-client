@@ -4,10 +4,10 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-      <div className="h-28 z-20 w-full">
+      <div className="h-28 relative z-20 w-full">
         <Navbar></Navbar>
       </div>
-      <div className="-z-10 ">
+      <div className="">
         <Outlet />
       </div>
     </>
