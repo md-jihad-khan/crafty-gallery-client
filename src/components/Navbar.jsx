@@ -23,8 +23,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-teal-600 border-b-2 rounded-none border-teal-600 font-bold"
-              : "font-normal hover:text-teal-600 "
+              ? "gradient-text border-b-2 rounded-none gradient-border font-bold"
+              : "font-normal hover:gradient-text "
           }
           to={"/"}
         >
@@ -35,10 +35,10 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-teal-600 border-b-2 rounded-none border-teal-600 font-bold"
-              : "font-normal hover:text-teal-600 "
+              ? "gradient-text border-b-2 rounded-none gradient-border font-bold"
+              : "font-normal hover:gradient-text "
           }
-          to={"/allArt&Craft"}
+          to={"/allArtAndCraft"}
         >
           AllArt & craft Items
         </NavLink>
@@ -49,10 +49,10 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-teal-600 border-b-2 rounded-none border-teal-600 font-bold"
+                  ? "gradient-text border-b-2 rounded-none border-teal-500 font-bold"
                   : "font-normal"
               }
-              to={"/updateProfile"}
+              to={"/addCraft"}
             >
               Add Craft Item
             </NavLink>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "text-teal-600 border-b-2 rounded-none border-teal-600 font-bold"
+                  ? "gradient-text border-b-2 rounded-none gradient-border font-bold"
                   : "font-normal"
               }
               to={"/contactUs"}
@@ -75,7 +75,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="backdrop-blur-sm fixed w-full">
+    <div className="backdrop-blur-sm  fixed w-full">
       <div className="mx-auto lg:container ">
         <div className="navbar font-poppins">
           <div className="navbar-start ">
@@ -109,14 +109,16 @@ const Navbar = () => {
             </div>
             <Link
               to={"/"}
-              className=" text-lg md:text-3xl font-semi-bold text-teal-600 font-rancho justify-center flex flex-col items-center"
+              className=" text-lg md:text-3xl font-semi-bold gradient-text font-rancho justify-center flex flex-col items-center"
             >
               <Lottie
                 className="w-8 md:w-20"
                 animationData={leafe}
                 loop={true}
               />
-              <p>Crafty Gallery</p>
+              <p>
+                <span className="text-cyan-500">Crafty</span> Gallery
+              </p>
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -127,12 +129,12 @@ const Navbar = () => {
               <>
                 <div className="flex items-center  gap-3">
                   <div
-                    className="tooltip hover:tooltip-open tooltip-left"
+                    className="tooltip hover:tooltip-open tooltip-left "
                     data-tip={user.displayName}
                   >
-                    <div className="avatar">
+                    <div className="avatar ">
                       <div
-                        className="w-14 rounded-full tooltip tooltip-open tooltip-bottom "
+                        className="w-14  rounded-full tooltip tooltip-open tooltip-bottom "
                         data-tip="hello"
                       >
                         <img src={user.photoURL} />
@@ -141,7 +143,7 @@ const Navbar = () => {
                   </div>
 
                   <button
-                    className="btn btn-outline border-teal-600"
+                    className="btn gradient-bg text-white"
                     onClick={logOut}
                   >
                     LogOut
@@ -150,7 +152,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to={"/login"} className="btn btn-outline border-teal-600">
+                <Link to={"/login"} className="btn gradient-bg text-white">
                   Login
                 </Link>
               </>

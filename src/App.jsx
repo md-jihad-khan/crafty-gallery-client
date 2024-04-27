@@ -7,7 +7,7 @@ function App() {
       <div className="h-28 z-20 w-full">
         <Navbar></Navbar>
       </div>
-      <div className="-z-10 relative">
+      <div className="-z-10 ">
         <Outlet />
       </div>
     </>

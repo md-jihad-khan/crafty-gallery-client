@@ -3,3 +3,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-text {
+  background: linear-gradient(to right, #06b6d4, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, #06b6d4, #14b8a6);
+}
+.gradient-border {
+  border-image: linear-gradient(#06b6d4, #14b8a6) 30;
+
+  border-style: solid;
+}

@@ -30,17 +30,17 @@ const Banner = () => {
             <div className="hero-overlay rounded-lg bg-gradient-to-t from-gray-900  to-transparent opacity-80"></div>
             <div className={"hero-content text-center text-white "}>
               <div className="lg:w-1/2">
-                <h1 className="mb-5  text-5xl font-bold text-teal-500 font-rancho">
+                <h1 className="mb-5 text-5xl font-bold text-white font-poppins">
                   Discover Timeless Craftsmanship
                 </h1>
-                <p className="mb-5 text-sm text-gray-300 font-poppins">
+                <p className="mb-5 text-xs text-gray-400 font-poppins">
                   Explore our exquisite collection of handcrafted ceramics and
                   pottery, where every piece tells a story of tradition,
                   artistry, and elegance. Elevate your space with our unique
                   creations, meticulously crafted by skilled artisans. Find the
                   perfect blend of beauty and functionality for your home.
                 </p>
-                <button className="btn cursor-pointer text-white font-rancho bg-transparent border border-teal-500 font-thin">
+                <button className="btn cursor-pointer text-white font-rancho gradient-bg font-thin border-none">
                   Explore More
                 </button>
               </div>
@@ -58,17 +58,17 @@ const Banner = () => {
             <div className="hero-overlay rounded-lg bg-gradient-to-t from-gray-900  to-transparent opacity-80"></div>
             <div className={"hero-content text-center text-white "}>
               <div className="lg:w-1/2">
-                <h1 className="mb-5 text-5xl font-bold text-teal-500 font-rancho">
+                <h1 className="mb-5 text-5xl font-bold text-white font-poppins">
                   Discover Timeless Craftsmanship
                 </h1>
-                <p className="mb-5 text-sm text-gray-300 font-poppins">
+                <p className="mb-5 text-xs text-gray-400 font-poppins">
                   Explore our exquisite collection of handcrafted ceramics and
                   pottery, where every piece tells a story of tradition,
                   artistry, and elegance. Elevate your space with our unique
                   creations, meticulously crafted by skilled artisans. Find the
                   perfect blend of beauty and functionality for your home.
-                </p>{" "}
-                <button className="btn cursor-pointer text-white font-rancho bg-transparent border border-teal-500 font-thin">
+                </p>
+                <button className="btn cursor-pointer text-white font-rancho gradient-bg font-thin border-none">
                   Explore More
                 </button>
               </div>
@@ -86,17 +86,17 @@ const Banner = () => {
             <div className="hero-overlay rounded-lg bg-gradient-to-t from-gray-900  to-transparent opacity-80"></div>
             <div className={"hero-content text-center text-white "}>
               <div className="lg:w-1/2">
-                <h1 className="mb-5 text-5xl font-bold text-teal-500 font-rancho">
+                <h1 className="mb-5 text-5xl font-bold text-white font-poppins">
                   Discover Timeless Craftsmanship
                 </h1>
-                <p className="mb-5 text-sm text-gray-300 font-poppins">
+                <p className="mb-5 text-xs text-gray-400 font-poppins">
                   Explore our exquisite collection of handcrafted ceramics and
                   pottery, where every piece tells a story of tradition,
                   artistry, and elegance. Elevate your space with our unique
                   creations, meticulously crafted by skilled artisans. Find the
                   perfect blend of beauty and functionality for your home.
-                </p>{" "}
-                <button className="btn cursor-pointer text-white font-rancho bg-transparent border border-teal-500 font-thin">
+                </p>
+                <button className="btn cursor-pointer text-white font-rancho gradient-bg font-thin border-none">
                   Explore More
                 </button>
               </div>
