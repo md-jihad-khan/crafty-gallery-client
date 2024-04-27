@@ -1,8 +1,13 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
-import CraftCard from "../components/CraftCard";
+
 const AllArtandCraft = () => {
   const crafts = useLoaderData();
+  const navigate = useNavigate();
+  const handleNavigate = (id) => {
+    navigate(`/craft/${id}`);
+  };
+
   return (
     <div className="container mx-auto mb-16">
       <div className="mb-7">
@@ -32,10 +37,37 @@ const AllArtandCraft = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {crafts.map((craft) => (
-          <CraftCard key={craft._id} craft={craft}></CraftCard>
-        ))}
+      <div className="overflow-x-auto">
+        <table className="table table-sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>View Details</th>
+              {/* Add more table headers as needed */}
+            </tr>
+          </thead>
+          <tbody>
+            {crafts.map((craft, index) => (
+              <tr key={craft._id}>
+                <th>{index + 1}</th>
+                <td>{craft.name}</td>
+                <td>{craft.subcategory}</td>
+                <td>{craft.price}</td>
+                <td>
+                  <Link
+                    to={`/craft/${craft._id}`}
+                    className="btn btn-ghost btn-xs"
+                  >
+                    Details
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
