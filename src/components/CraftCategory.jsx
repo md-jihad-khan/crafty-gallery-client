@@ -3,7 +3,7 @@ import CraftCategoryCard from "./CraftCategoryCard";
 import { useEffect, useState } from "react";
 
 const CraftCategory = () => {
-  const [categorys, setCategorys] = useState(null);
+  const [categorys, setCategorys] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/craftsCategory")

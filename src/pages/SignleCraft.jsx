@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 const SignleCraft = () => {
   const craft = useLoaderData();
-  console.log(craft);
+
   return (
     <>
       <div className="hero-content flex-col gap-10 lg:flex-row  ">

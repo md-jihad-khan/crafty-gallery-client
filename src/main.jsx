@@ -12,6 +12,7 @@ import AllArtandCraft from "./pages/AllArtandCraft.jsx";
 import SignleCraft from "./pages/SignleCraft.jsx";
 import MyArtandCraft from "./pages/MyArtandCraft.jsx";
 import UpdateCraft from "./pages/UpdateCraft.jsx";
+import CategoryCrafts from "./pages/CategoryCrafts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,12 @@ const router = createBrowserRouter([
         element: <UpdateCraft></UpdateCraft>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/craft/${params.id}`),
+      },
+      {
+        path: "/category/:name",
+        element: <CategoryCrafts></CategoryCrafts>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.name}`),
       },
       {
         path: "/myArtAndCraft",
