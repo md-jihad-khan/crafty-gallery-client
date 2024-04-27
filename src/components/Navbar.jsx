@@ -72,7 +72,7 @@ const Navbar = () => {
                   ? "gradient-text border-b-2 rounded-none gradient-border font-bold"
                   : "font-normal"
               }
-              to={"/contactUs"}
+              to={"/myArtAndCraft"}
             >
               MyArt & Craft List
             </NavLink>

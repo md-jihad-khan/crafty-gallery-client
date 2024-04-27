@@ -10,6 +10,7 @@ import Register from "./pages/Register.jsx";
 import AddCraft from "./pages/AddCraft.jsx";
 import AllArtandCraft from "./pages/AllArtandCraft.jsx";
 import SignleCraft from "./pages/SignleCraft.jsx";
+import MyArtandCraft from "./pages/MyArtandCraft.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
         element: <SignleCraft></SignleCraft>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/craft/${params.id}`),
+      },
+      {
+        path: "/myArtAndCraft",
+        element: <MyArtandCraft></MyArtandCraft>,
       },
     ],
   },
