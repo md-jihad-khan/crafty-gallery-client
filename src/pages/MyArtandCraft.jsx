@@ -7,7 +7,10 @@ import MyCraftCard from "../components/MyCraftCard";
 const MyArtandCraft = () => {
   const [crafts, setCrafts] = useState([]);
   const [customization, setCustomization] = useState("");
-
+  const [reload, setReload] = useState(null);
+  const handleReload = () => {
+    setReload(!reload);
+  };
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
@@ -16,7 +19,7 @@ const MyArtandCraft = () => {
     )
       .then((res) => res.json())
       .then((data) => setCrafts(data));
-  }, [customization]);
+  }, [customization, reload]);
 
   const handleCustomizationChange = (event) => {
     setCustomization(event.target.value);
@@ -53,7 +56,11 @@ const MyArtandCraft = () => {
       {crafts.length ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {crafts.map((craft) => (
-            <MyCraftCard key={craft._id} craft={craft}></MyCraftCard>
+            <MyCraftCard
+              key={craft._id}
+              craft={craft}
+              handleReload={handleReload}
+            ></MyCraftCard>
           ))}
         </div>
       ) : (

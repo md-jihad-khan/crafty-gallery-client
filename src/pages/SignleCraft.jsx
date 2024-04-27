@@ -21,7 +21,7 @@ const SignleCraft = () => {
           <p className="my-3 text-lg font-semibold">
             Subcategory: {craft.subcategory}
           </p>
-          <hr className="gradient-border border" />
+          <hr className="gradient-border border mb-4" />
           <p className="flex items-center">
             <strong>Rating:</strong>{" "}
             <span className="text-sm flex items-center ml-2 text-gray-500">
@@ -84,12 +84,8 @@ const SignleCraft = () => {
               {craft.processing_time}
             </span>
           </p>
-          <div className="flex gap-5 mt-4 mb-2 items-center">
-            <p className="font-bold">Facilities</p>
 
-            <span></span>
-          </div>
-          <hr className="gradient-border border" />
+          <hr className="gradient-border border mt-4" />
         </div>
       </div>
     </>

@@ -1,11 +1,10 @@
-import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
 import Swal from "sweetalert2";
-import { AuthContext } from "../providers/AuthProvider";
 
-const AddCraft = () => {
-  const { user } = useContext(AuthContext);
+const UpdateCraft = () => {
+  const craft = useLoaderData();
 
   const handleAddCraft = (e) => {
     e.preventDefault();
@@ -19,12 +18,10 @@ const AddCraft = () => {
     const customization = form.customization.value;
     const processing_time = form.time.value;
     const stockStatus = form.stockStatus.value;
-    const user_Email = form.userEmail.value;
-    const user_Name = form.userName.value;
     const photo_url = form.photo.value;
     const description = form.description.value;
 
-    const craft = {
+    const updatedCraft = {
       name,
       subcategory,
       price,
@@ -32,41 +29,36 @@ const AddCraft = () => {
       customization,
       processing_time,
       stockStatus,
-      user_Email,
-      user_Name,
       photo_url,
       description,
     };
 
-    fetch("http://localhost:5000/craft", {
-      method: "POST",
+    fetch(`http://localhost:5000/craft/${craft._id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(craft),
+      body: JSON.stringify(updatedCraft),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             icon: "success",
             title: "Success",
-            text: "Craft Added Successfully",
+            text: "Craft Updated Successfully",
             showConfirmButton: false,
             timer: 1500,
           });
         }
-
-        form.reset();
       });
   };
-
   return (
     <div>
       <div className="md:w-4/5 mx-auto p-5">
         <div className="bg-base-200  p-5 rounded-lg text-center ">
           <div className="flex items-center justify-center gap-3 text-2xl md:text-5xl mb-2 mt-3 font-poppins font-bold">
-            <h3 className="gradient-text ">Add Craft</h3>
+            <h3 className="gradient-text ">Update Craft</h3>
             <span className="text-teal-500 text-2xl md:text-5xl">
               <Typewriter
                 cursor
@@ -107,6 +99,7 @@ const AddCraft = () => {
                   placeholder="Enter craft name"
                   className="input "
                   required
+                  defaultValue={craft.name}
                 />
               </div>
               <div className="form-control">
@@ -119,10 +112,8 @@ const AddCraft = () => {
                   className="input w-full text-gray-400"
                   name="subcategory"
                   required
+                  defaultValue={craft.subcategory}
                 >
-                  <option value="" disabled>
-                    Select Subcategory name
-                  </option>
                   <option>Clay made pottery</option>
                   <option>Stoneware</option>
                   <option>Porcelain</option>
@@ -141,7 +132,8 @@ const AddCraft = () => {
                   type="text"
                   name="price"
                   placeholder="Enter the craft price $"
-                  className="input  "
+                  className="input "
+                  defaultValue={craft.price}
                   required
                 />
               </div>
@@ -155,6 +147,7 @@ const AddCraft = () => {
                   className="input select-bordered w-full text-gray-400"
                   name="rating"
                   required
+                  defaultValue={craft.rating}
                 >
                   <option value="" disabled>
                     Select rating options
@@ -176,6 +169,7 @@ const AddCraft = () => {
                   className="input select-bordered w-full text-gray-400"
                   name="customization"
                   required
+                  defaultValue={craft.customization}
                 >
                   <option value="" disabled>
                     Select customization options
@@ -196,6 +190,7 @@ const AddCraft = () => {
                   placeholder="Enter the Processing Time"
                   className="input  "
                   required
+                  defaultValue={craft.processing_time}
                 />
               </div>
               <div className="form-control">
@@ -208,6 +203,7 @@ const AddCraft = () => {
                   className="input select-bordered w-full text-gray-400"
                   name="stockStatus"
                   required
+                  defaultValue={craft.stockStatus}
                 >
                   <option value="" disabled>
                     Select StockStatus options
@@ -215,36 +211,6 @@ const AddCraft = () => {
                   <option value="In stock">In stock</option>
                   <option value="Made to Order">Made to Order</option>
                 </select>
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text gradient-text font-semibold text-xl">
-                    Your Email
-                  </span>
-                </label>
-                <input
-                  type="email"
-                  name="userEmail"
-                  placeholder="Enter Your Email"
-                  className="input  "
-                  required
-                  defaultValue={user.email}
-                />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text gradient-text font-semibold text-xl">
-                    Your Name
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  name="userName"
-                  placeholder="Enter Your Name"
-                  className="input  "
-                  required
-                  defaultValue={user.displayName}
-                />
               </div>
               <div className="form-control">
                 <label className="label">
@@ -258,6 +224,7 @@ const AddCraft = () => {
                   placeholder="Enter the photo url"
                   className="input  "
                   required
+                  defaultValue={craft.photo_url}
                 />
               </div>
             </div>
@@ -271,12 +238,13 @@ const AddCraft = () => {
               placeholder="description"
               rows="5"
               className="input h-full w-full"
+              defaultValue={craft.description}
             ></textarea>
             <button
               type="submit"
               className="border text-white gradient-bg btn mt-4 w-full font-rancho text-xl  "
             >
-              Add Craft
+              Update Craft
             </button>
           </form>
         </div>
@@ -285,4 +253,4 @@ const AddCraft = () => {
   );
 };
 
-export default AddCraft;
+export default UpdateCraft;

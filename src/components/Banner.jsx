@@ -84,7 +84,7 @@ const Banner = () => {
             }}
           >
             <div className="hero-overlay rounded-lg bg-gradient-to-t from-gray-900  to-transparent opacity-80"></div>
-            <div className={"hero-content text-center text-white "}>
+            <div className="hero-content text-center text-white ">
               <div className="lg:w-1/2">
                 <h1 className="mb-5 text-4xl md:text-5xl font-bold text-white font-poppins">
                   Discover Timeless Craftsmanship
