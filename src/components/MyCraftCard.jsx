@@ -1,17 +1,9 @@
+import { FaPen } from "react-icons/fa";
 import { RiStarSFill } from "react-icons/ri";
+import { MdDelete } from "react-icons/md";
 const MyCraftCard = ({ craft }) => {
-  const {
-    _id,
-    name,
-    subcategory,
-    price,
-    rating,
-    customization,
-    processing_time,
-    stockStatus,
-    photo_url,
-    description,
-  } = craft;
+  const { _id, name, price, rating, customization, stockStatus, photo_url } =
+    craft;
   return (
     <div className="rounded-lg shadow-xl  cursor-pointer transition-transform duration-300 transform hover:scale-105 border">
       <figure className="px-10 pt-2 ">
@@ -82,12 +74,14 @@ const MyCraftCard = ({ craft }) => {
             to={`/craft/${_id}`}
             className="btn cursor-pointer gradient-bg text-white"
           >
-            Update
+            <FaPen /> Update
           </button>
           <button
             to={`/craft/${_id}`}
             className="btn cursor-pointer gradient-bg text-white"
           >
+            {" "}
+            <MdDelete />
             Delete
           </button>
         </div>

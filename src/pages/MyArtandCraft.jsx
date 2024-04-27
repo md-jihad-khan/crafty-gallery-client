@@ -1,19 +1,26 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { Typewriter } from "react-simple-typewriter";
-import CraftCard from "../components/CraftCard";
+
 import MyCraftCard from "../components/MyCraftCard";
 
 const MyArtandCraft = () => {
-  const [crafts, setCrafts] = useState(false);
+  const [crafts, setCrafts] = useState([]);
+  const [customization, setCustomization] = useState("");
 
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/crafts/${user.email}`)
+    fetch(
+      `http://localhost:5000/crafts/${user.email}?customization=${customization}`
+    )
       .then((res) => res.json())
       .then((data) => setCrafts(data));
-  }, []);
+  }, [customization]);
+
+  const handleCustomizationChange = (event) => {
+    setCustomization(event.target.value);
+  };
 
   return (
     <div className="container mx-auto mb-10">
@@ -31,7 +38,19 @@ const MyArtandCraft = () => {
           />
         </span>
       </div>
-      {crafts ? (
+      <div className="text-center mb-7">
+        <p className="font-poppins font-medium">Customizable</p>
+        <select
+          value={customization}
+          className="select select-bordered w-full max-w-xs"
+          onChange={handleCustomizationChange}
+        >
+          <option value={""}>All types</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      {crafts.length ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {crafts.map((craft) => (
             <MyCraftCard key={craft._id} craft={craft}></MyCraftCard>
