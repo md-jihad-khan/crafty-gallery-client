@@ -1,7 +1,15 @@
 import { Typewriter } from "react-simple-typewriter";
 import CraftCategoryCard from "./CraftCategoryCard";
+import { useEffect, useState } from "react";
 
 const CraftCategory = () => {
+  const [categorys, setCategorys] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/craftsCategory")
+      .then((res) => res.json())
+      .then((data) => setCategorys(data));
+  }, []);
   return (
     <div className="container mx-auto mb-10">
       <div className="text-center mb-10">
@@ -29,8 +37,10 @@ const CraftCategory = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <CraftCategoryCard />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {categorys.map((category) => (
+          <CraftCategoryCard key={category._id} category={category} />
+        ))}
       </div>
     </div>
   );
