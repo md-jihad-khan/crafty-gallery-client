@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { ScrollRestoration, useLoaderData, useParams } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import CraftCard from "../components/CraftCard";
 
@@ -9,6 +9,7 @@ const CategoryCrafts = () => {
 
   return (
     <div className="container mx-auto mb-16">
+      <ScrollRestoration />
       <div className="mb-7">
         <div className="flex items-center justify-center gap-3 text-2xl md:text-5xl font-rancho mb-2 mt-3  font-bold">
           <h3 className="gradient-text "> {heading}</h3>

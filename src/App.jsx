@@ -8,9 +8,7 @@ function App() {
       <div className="h-28 relative z-20 w-full">
         <Navbar></Navbar>
       </div>
-      <div className="">
-        <Outlet />
-      </div>
+      <Outlet />
       <Footer />
     </>
   );

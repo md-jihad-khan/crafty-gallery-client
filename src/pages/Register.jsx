@@ -1,6 +1,11 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  ScrollRestoration,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
 
@@ -84,7 +89,8 @@ const Register = () => {
 
   return (
     <>
-      <div className="container mx-auto ">
+      <div className="container mx-auto mb-10">
+        <ScrollRestoration />
         <div className="w-full max-w-md mx-auto p-8 space-y-3 rounded-xl bg-base-200">
           <h1 className="text-2xl font-bold text-center gradient-text ">
             Register

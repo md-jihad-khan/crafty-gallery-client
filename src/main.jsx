@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -14,6 +14,7 @@ import MyArtandCraft from "./pages/MyArtandCraft.jsx";
 import UpdateCraft from "./pages/UpdateCraft.jsx";
 import CategoryCrafts from "./pages/CategoryCrafts.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import Privateroute from "./components/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addCraft",
-        element: <AddCraft></AddCraft>,
+        element: (
+          <Privateroute>
+            <AddCraft></AddCraft>
+          </Privateroute>
+        ),
       },
       {
         path: "/allArtAndCraft",
@@ -44,13 +49,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/craft/:id",
-        element: <SignleCraft></SignleCraft>,
+        element: (
+          <Privateroute>
+            <SignleCraft></SignleCraft>
+          </Privateroute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/craft/${params.id}`),
       },
       {
         path: "/updateCraft/:id",
-        element: <UpdateCraft></UpdateCraft>,
+        element: (
+          <Privateroute>
+            <UpdateCraft></UpdateCraft>
+          </Privateroute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/craft/${params.id}`),
       },
@@ -62,7 +75,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myArtAndCraft",
-        element: <MyArtandCraft></MyArtandCraft>,
+        element: (
+          <Privateroute>
+            <MyArtandCraft></MyArtandCraft>
+          </Privateroute>
+        ),
       },
     ],
   },

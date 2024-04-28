@@ -1,12 +1,13 @@
 import { RiStarSFill } from "react-icons/ri";
-import { useLoaderData } from "react-router-dom";
+import { ScrollRestoration, useLoaderData } from "react-router-dom";
 
 const SignleCraft = () => {
   const craft = useLoaderData();
 
   return (
     <>
-      <div className="hero-content flex-col gap-10 lg:flex-row  ">
+      <div className="hero-content flex-col gap-10 lg:flex-row min-h-[80vh] ">
+        <ScrollRestoration />
         <div className=" bg-[#1313130D] rounded-lg lg:w-full ">
           <img
             src={craft.photo_url}

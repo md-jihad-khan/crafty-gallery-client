@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { ScrollRestoration, useLoaderData } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
 import Swal from "sweetalert2";
@@ -55,6 +55,7 @@ const UpdateCraft = () => {
   };
   return (
     <div>
+      <ScrollRestoration />
       <div className="md:w-4/5 mx-auto p-5">
         <div className="bg-base-200  p-5 rounded-lg text-center ">
           <div className="flex items-center justify-center gap-3 text-2xl md:text-5xl mb-2 mt-3 font-poppins font-bold">

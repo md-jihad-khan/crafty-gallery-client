@@ -13,7 +13,7 @@ import leafe from "../assets/Animation - 1714111134742.json";
 const Footer = () => {
   return (
     <div className="bg-base-200">
-      <div className="flex flex-col pt-20 pb-10 md:flex-row w-4/5 mx-auto items-center">
+      <div className="flex flex-col pt-10 pb-10 md:flex-row w-4/5 mx-auto items-center">
         <div className="space-y-3 md:w-1/2">
           <Lottie className="w-8 md:w-20" animationData={leafe} loop={true} />
           <h3 className="font-rancho text-3xl font-bold gradient-text">

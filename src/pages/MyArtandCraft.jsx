@@ -3,22 +3,29 @@ import { AuthContext } from "../providers/AuthProvider";
 import { Typewriter } from "react-simple-typewriter";
 
 import MyCraftCard from "../components/MyCraftCard";
+import { ScrollRestoration } from "react-router-dom";
 
 const MyArtandCraft = () => {
   const [crafts, setCrafts] = useState([]);
   const [customization, setCustomization] = useState("");
   const [reload, setReload] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   const handleReload = () => {
     setReload(!reload);
   };
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
+    setLoading(true);
     fetch(
       `http://localhost:5000/crafts/${user.email}?customization=${customization}`
     )
       .then((res) => res.json())
-      .then((data) => setCrafts(data));
+      .then((data) => {
+        setCrafts(data);
+        setLoading(false);
+      });
   }, [customization, reload]);
 
   const handleCustomizationChange = (event) => {
@@ -26,7 +33,8 @@ const MyArtandCraft = () => {
   };
 
   return (
-    <div className="container mx-auto mb-10">
+    <div className="container mx-auto mb-10 min-h-[70vh]">
+      <ScrollRestoration />
       <div className="flex items-center justify-center gap-3 text-2xl md:text-5xl font-rancho font-bold mb-5">
         <h3 className="gradient-text ">My Art & </h3>
         <span className="text-teal-500 text-3xl md:text-5xl">
@@ -53,6 +61,14 @@ const MyArtandCraft = () => {
           <option value="No">No</option>
         </select>
       </div>
+
+      {loading && (
+        <>
+          <div className="h-[60h] text-center">
+            <span className="loading text-teal-500 mx-auto w-16 loading-spinner "></span>
+          </div>
+        </>
+      )}
       {crafts.length ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {crafts.map((craft) => (
