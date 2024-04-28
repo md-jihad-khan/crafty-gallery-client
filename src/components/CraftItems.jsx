@@ -4,11 +4,16 @@ import { Typewriter } from "react-simple-typewriter";
 
 const CraftItems = () => {
   const [crafts, setCrafts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/crafts")
+    setLoading(true);
+    fetch(`${import.meta.env.VITE_SERVER}crafts`)
       .then((res) => res.json())
-      .then((data) => setCrafts(data));
+      .then((data) => {
+        setCrafts(data);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -35,7 +40,13 @@ const CraftItems = () => {
           charming crafts, our collection offers something unique for every
         </p>
       </div>
-
+      {loading && (
+        <>
+          <div className="h-[60h] text-center">
+            <span className="loading text-teal-500 mx-auto w-16 loading-spinner "></span>
+          </div>
+        </>
+      )}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {crafts.map((craft) => (
           <CraftCard key={craft._id} craft={craft}></CraftCard>

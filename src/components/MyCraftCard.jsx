@@ -3,6 +3,7 @@ import { RiStarSFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const MyCraftCard = ({ craft, handleReload }) => {
   const { _id, name, price, rating, customization, stockStatus, photo_url } =
@@ -19,7 +20,7 @@ const MyCraftCard = ({ craft, handleReload }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/craft/${id}`, {
+        fetch(`${import.meta.env.VITE_SERVER}craft/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -123,5 +124,8 @@ const MyCraftCard = ({ craft, handleReload }) => {
     </div>
   );
 };
-
+MyCraftCard.propTypes = {
+  craft: PropTypes.object,
+  handleReload: PropTypes.func,
+};
 export default MyCraftCard;

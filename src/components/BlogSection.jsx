@@ -28,7 +28,7 @@ const BlogSection = () => {
             behind-the-scenes studio tours and artist spotlights, our blog is
             your gateway to the vibrant and ever-evolving world of pottery.
             Whether you're a seasoned ceramic artist or a curious beginner, join
-            us on this journey of exploration, learning, and inspiration. Let's
+            us on this journey of exploration, learning, and inspiration. Let s
             shape clay and share stories together!
           </p>
         </div>
@@ -65,7 +65,7 @@ const BlogSection = () => {
                 Read more
               </p>
               <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-                A Potter's Journey from Clay to Creation
+                A Potters Journey from Clay to Creation
               </h3>
               <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
                 <span>June 1, 2020</span>

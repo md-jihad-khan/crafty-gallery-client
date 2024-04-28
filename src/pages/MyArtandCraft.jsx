@@ -19,7 +19,9 @@ const MyArtandCraft = () => {
   useEffect(() => {
     setLoading(true);
     fetch(
-      `http://localhost:5000/crafts/${user.email}?customization=${customization}`
+      `${import.meta.env.VITE_SERVER}crafts/${
+        user.email
+      }?customization=${customization}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -81,7 +83,9 @@ const MyArtandCraft = () => {
         </div>
       ) : (
         <div className="flex justify-center items-center">
-          <p className="text-xl">You Don't Crated any Craft Items</p>
+          {loading || (
+            <p className="text-xl">You Don not Crated any Craft Items</p>
+          )}
         </div>
       )}
     </div>

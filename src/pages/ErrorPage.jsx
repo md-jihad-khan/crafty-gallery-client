@@ -11,7 +11,7 @@ const ErrorPage = () => {
             <Lottie className="" animationData={animation} loop={true} />
           </div>
           <p className="text-2xl font-semibold md:text-3xl">
-            Sorry, we couldn't find this page.
+            Sorry, we could not find this page.
           </p>
           <Link
             to={"/"}

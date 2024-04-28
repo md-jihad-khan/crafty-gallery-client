@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const CraftCategoryCard = ({ category }) => {
   return (
@@ -21,5 +22,7 @@ const CraftCategoryCard = ({ category }) => {
     </Link>
   );
 };
-
+CraftCategoryCard.propTypes = {
+  category: PropTypes.object,
+};
 export default CraftCategoryCard;

@@ -4,11 +4,16 @@ import { useEffect, useState } from "react";
 
 const CraftCategory = () => {
   const [categorys, setCategorys] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/craftsCategory")
+    setLoading(true);
+    fetch(`${import.meta.env.VITE_SERVER}craftsCategory`)
       .then((res) => res.json())
-      .then((data) => setCategorys(data));
+      .then((data) => {
+        setCategorys(data);
+        setLoading(false);
+      });
   }, []);
   return (
     <div className="container mx-auto mb-10">
@@ -36,7 +41,13 @@ const CraftCategory = () => {
           colors, textures, and techniques, where every piece tells a unique
         </p>
       </div>
-
+      {loading && (
+        <>
+          <div className="h-[60h] text-center">
+            <span className="loading text-teal-500 mx-auto w-16 loading-spinner "></span>
+          </div>
+        </>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {categorys.map((category) => (
           <CraftCategoryCard key={category._id} category={category} />

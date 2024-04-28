@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "/allArtAndCraft",
         element: <AllArtandCraft></AllArtandCraft>,
-        loader: () => fetch("http://localhost:5000/crafts"),
+        loader: () => fetch(`${import.meta.env.VITE_SERVER}crafts`),
       },
       {
         path: "/craft/:id",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
           </Privateroute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/craft/${params.id}`),
+          fetch(`${import.meta.env.VITE_SERVER}craft/${params.id}`),
       },
       {
         path: "/updateCraft/:id",
@@ -65,13 +65,13 @@ const router = createBrowserRouter([
           </Privateroute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/craft/${params.id}`),
+          fetch(`${import.meta.env.VITE_SERVER}craft/${params.id}`),
       },
       {
         path: "/category/:name",
         element: <CategoryCrafts></CategoryCrafts>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.name}`),
+          fetch(`${import.meta.env.VITE_SERVER}category/${params.name}`),
       },
       {
         path: "/myArtAndCraft",

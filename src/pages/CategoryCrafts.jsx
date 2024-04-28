@@ -35,7 +35,7 @@ const CategoryCrafts = () => {
         </div>
       ) : (
         <p className="font-poppins font-bold text-center md:text-2xl text-lg">
-          Don't have any craft in this category
+          Don t have any craft in this category
         </p>
       )}
     </div>

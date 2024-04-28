@@ -39,7 +39,7 @@ const OurTeam = () => {
                 src="https://plus.unsplash.com/premium_photo-1675719051566-97f16f0772f4?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
               <div className="flex flex-col items-center">
-                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
+                <h4 className="text-xl font-semibold">Jasmine</h4>
               </div>
             </div>
             <div className="space-y-4 w-52 mr-10">
@@ -49,27 +49,7 @@ const OurTeam = () => {
                 src="https://images.unsplash.com/photo-1673252414914-1f9b250a1d88?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               />
               <div className="flex flex-col items-center">
-                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              </div>
-            </div>
-            <div className="space-y-4 w-52 mr-10">
-              <img
-                alt=""
-                className="object-cover h-56 w-full mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-                src="https://plus.unsplash.com/premium_photo-1677458719074-5e78f14e8e60?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              />
-              <div className="flex flex-col items-center">
-                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
-              </div>
-            </div>
-            <div className="space-y-4 w-52 mr-10">
-              <img
-                alt=""
-                className="object-cover h-56 w-full mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
-                src="https://images.unsplash.com/photo-1673339065080-019f28818acb?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              />
-              <div className="flex flex-col items-center">
-                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
+                <h4 className="text-xl font-semibold">Maya</h4>
               </div>
             </div>
             <div className="space-y-4 w-52 mr-10">
@@ -79,9 +59,30 @@ const OurTeam = () => {
                 src="https://images.pexels.com/photos/6611267/pexels-photo-6611267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               />
               <div className="flex flex-col items-center">
-                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
+                <h4 className="text-xl font-semibold">Lucas</h4>
               </div>
             </div>
+            <div className="space-y-4 w-52 mr-10">
+              <img
+                alt=""
+                className="object-cover h-56 w-full mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
+                src="https://plus.unsplash.com/premium_photo-1677458719074-5e78f14e8e60?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+              <div className="flex flex-col items-center">
+                <h4 className="text-xl font-semibold">Sofia</h4>
+              </div>
+            </div>
+            <div className="space-y-4 w-52 mr-10">
+              <img
+                alt=""
+                className="object-cover h-56 w-full mx-auto mb-4 bg-center rounded-sm dark:bg-gray-500"
+                src="https://images.unsplash.com/photo-1673339065080-019f28818acb?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              />
+              <div className="flex flex-col items-center">
+                <h4 className="text-xl font-semibold">Ethan</h4>
+              </div>
+            </div>
+
             <div className="space-y-4 w-52 mr-10">
               <img
                 alt=""
@@ -99,7 +100,7 @@ const OurTeam = () => {
                 src="https://images.pexels.com/photos/4241343/pexels-photo-4241343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               />
               <div className="flex flex-col items-center">
-                <h4 className="text-xl font-semibold">Leroy Jenkins</h4>
+                <h4 className="text-xl font-semibold">Sebastian</h4>
               </div>
             </div>
           </Marquee>

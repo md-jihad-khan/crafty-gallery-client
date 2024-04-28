@@ -39,7 +39,7 @@ const AddCraft = () => {
       description,
     };
 
-    fetch("http://localhost:5000/craft", {
+    fetch(`${import.meta.env.VITE_SERVER}craft`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

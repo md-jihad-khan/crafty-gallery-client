@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { RiStarSFill } from "react-icons/ri";
+import PropTypes from "prop-types";
 
 const CraftCard = ({ craft }) => {
   const {
@@ -102,5 +103,7 @@ const CraftCard = ({ craft }) => {
     </div>
   );
 };
-
+CraftCard.propTypes = {
+  craft: PropTypes.object,
+};
 export default CraftCard;

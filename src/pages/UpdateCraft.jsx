@@ -33,7 +33,7 @@ const UpdateCraft = () => {
       description,
     };
 
-    fetch(`http://localhost:5000/craft/${craft._id}`, {
+    fetch(`${import.meta.env.VITE_SERVER}craft/${craft._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
