@@ -13,11 +13,13 @@ import SignleCraft from "./pages/SignleCraft.jsx";
 import MyArtandCraft from "./pages/MyArtandCraft.jsx";
 import UpdateCraft from "./pages/UpdateCraft.jsx";
 import CategoryCrafts from "./pages/CategoryCrafts.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

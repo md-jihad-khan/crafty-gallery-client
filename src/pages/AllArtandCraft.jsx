@@ -12,9 +12,7 @@ const AllArtandCraft = () => {
     <div className="container mx-auto mb-16">
       <div className="mb-7">
         <div className="flex items-center justify-center gap-3 text-2xl md:text-5xl font-rancho mb-2 mt-3  font-bold">
-          <h3 className="gradient-text ">
-            Discover a World of Handcrafted Art{" "}
-          </h3>
+          <h3 className="gradient-text ">All Art & </h3>
           <span className="text-teal-500 text-3xl md:text-5xl">
             <Typewriter
               cursor

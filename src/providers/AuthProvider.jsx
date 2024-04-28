@@ -11,6 +11,7 @@ import {
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase";
 import PropTypes from "prop-types";
+import Skeleton from "../pages/Skeleton";
 
 export const AuthContext = createContext(null);
 
@@ -71,7 +72,7 @@ const AuthProvider = ({ children }) => {
   };
   return (
     <AuthContext.Provider value={authInfo}>
-      {loading ? <p>hi</p> : children}
+      {loading ? <Skeleton></Skeleton> : children}
     </AuthContext.Provider>
   );
 };
